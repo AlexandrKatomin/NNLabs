@@ -2,7 +2,15 @@ package Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
+import javafx.geometry.Insets;
+import javafx.scene.paint.*;
+import javafx.scene.paint.Color;
+
+import java.awt.*;
 
 /**
  * Created by Alex on 21.09.2017.
@@ -37,18 +45,18 @@ public class lab1Controller
     void createFields(){
         paneWithBtm.setPrefWidth(34*2 + lengthBtm*countBtmInWidth);
         paneWithBtm.setPrefHeight(25*2 + lengthBtm* countBtmInHeight);
+        paneWithBtm.setBackground(new Background(new BackgroundFill(Color.WHITE, CornerRadii.EMPTY, Insets.EMPTY)));
         fields=new Button[countBtmInHeight][countBtmInWidth];
 
         for(int i=0; i<countBtmInWidth;i++){
             for(int j=0;j<countBtmInHeight;j++){
 
                 fields[i][j]= new Button();
-                fields[i][j].setLayoutX(34 + lengthBtm * i);
-                fields[i][j].setLayoutY(25 + lengthBtm*j);
-                fields[i][j].setPrefHeight(lengthBtm);
+                fields[i][j].setLayoutX(34 + (lengthBtm+2 ) * i);
+                fields[i][j].setLayoutY(25 + (lengthBtm+2)*j);
+                fields[i][j].setPrefHeight(lengthBtm-4);
                 fields[i][j].setPrefWidth(lengthBtm-1);
                 fields[i][j].setId(createIdForBtm(i,j));
-
               //  fields[i][j].setOnAction(this::action);
                 paneWithBtm.getChildren().add(fields[i][j]);
             }
