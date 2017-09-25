@@ -31,7 +31,7 @@ public class Main extends Application {
         AnchorPane paneOne= FXMLLoader.load(paneOneUrl);
         root.setTop(box);
         root.setCenter(paneOne);
-        Scene scene = new Scene(root,700,900);
+        Scene scene = new Scene(root,750,770);
         primaryStage.setScene(scene);
         primaryStage.show();
 
