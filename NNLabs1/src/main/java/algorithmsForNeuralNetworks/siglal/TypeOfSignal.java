@@ -1,4 +1,4 @@
-package algorithmsForNeuralNetworks;
+package algorithmsForNeuralNetworks.siglal;
 
 /**
  * Created by Alex on 22.09.2017.

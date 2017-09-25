@@ -13,7 +13,7 @@ import java.util.List;
 
 
 public class TrainingNeuron {
-    @Setter @Getter List<int[]> arrayOfImagesByClassA;
+    /*@Setter @Getter List<int[]> arrayOfImagesByClassA;
     @Setter @Getter List<int[]> arrayOfImagesByClassB;
     int numberForClassA;
     int numberForClassB;
@@ -77,7 +77,7 @@ public class TrainingNeuron {
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-}
+    }
 
     int ruleOfHebb(int x, int y){
         if(typeOfSignal == TypeOfSignal.bipolar){
@@ -189,26 +189,5 @@ public class TrainingNeuron {
         }
 
 
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    
+    }*/
 }

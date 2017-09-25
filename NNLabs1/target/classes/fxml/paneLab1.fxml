@@ -9,31 +9,56 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.lab1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.lab1Controller">
    <children>
       <VBox layoutX="112.0" layoutY="34.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane>
                <children>
-                  <VBox layoutX="3.0" prefHeight="253.0" prefWidth="240.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="20.0">
+                  <VBox layoutX="3.0" prefHeight="300.0" prefWidth="400.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="20.0">
                      <children>
-                        <Label text="3" />
-                        <Label text="15" />
-                        <Slider />
+                        <Slider fx:id="sliderLength" max="10.0" min="3.0">
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin></Slider>
                         <Label text="Длина" />
-                        <Label text="3" />
-                        <Label text="15" />
-                        <Slider />
+                        <Label fx:id="labelLength" text="Label" />
+                        <Slider fx:id="sliderWidth" max="10.0" min="3.0">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></Slider>
                         <Label text="Шрина" />
+                        <Label fx:id="labelWidth" text="Label" />
+                        <Slider fx:id="sliderCountItem" max="5.0" min="1.0">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin></Slider>
                         <Label prefHeight="21.0" prefWidth="168.0" text="Кол-во эл-тов в классе" />
-                        <Label text="1" />
-                        <Label text="10" />
-                        <Slider />
+                        <Label fx:id="lableCount" text="Label" />
                      </children>
                   </VBox>
                </children>
             </AnchorPane>
-            <Pane fx:id="paneWithBtm" prefHeight="150.0" prefWidth="158.0" />
+            <HBox>
+               <children>
+                  <Pane fx:id="paneWithBtm" prefHeight="350.0" prefWidth="350.0" />
+                  <HBox prefHeight="100.0" prefWidth="350.0">
+                     <children>
+                        <VBox fx:id="vboxClassA" prefHeight="200.0" prefWidth="175.0">
+                           <children>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" text="Button" />
+                                    <Button mnemonicParsing="false" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vboxClassB" prefHeight="200.0" prefWidth="175.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
             <HBox>
                <children>
                   <Button fx:id="btmCreate" mnemonicParsing="false" onAction="#onCreatePane" text="Создать" />

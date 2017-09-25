@@ -1,5 +1,9 @@
 package algorithmsForNeuralNetworks;
 
+import algorithmsForNeuralNetworks.siglal.BipolarSignal;
+import algorithmsForNeuralNetworks.siglal.Signal;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,8 +14,8 @@ public class MainForTest {
 
     static int countItem=9;
 
-    static List<int[]> arrayA= new ArrayList<int[]>();
-    static List<int[]> arrayB = new ArrayList<int[]>();
+    static List<ArrayList<Integer>> arrayA= new ArrayList<ArrayList<Integer>>();
+    static List<ArrayList<Integer>> arrayB= new ArrayList<ArrayList<Integer>>();
 
 
 
@@ -23,12 +27,18 @@ public class MainForTest {
         int[] imjA2 = {1,0,1,1,1,1,0,0,1};
         int[] imjB2 = {1,1,1,1,0,1,1,0,1 };
 
-        arrayA.add(imjA);
-        arrayB.add(imjB);
+        ArrayList<Integer> listA = new ArrayList<Integer>();
+        ArrayList<Integer> listB = new ArrayList<Integer>();
+        for(int i=0;i<imjA.length;i++){
+            listA.add(imjA[i]);
+            listB.add(imjB[i]);
+        }
 
+        arrayA.add(listA);
+        arrayB.add(listB);
 
-
-        TrainingNeuron neuron = new TrainingNeuron(countItem,1,TypeOfSignal.bipolar);
+        Signal signal= new BipolarSignal();
+        Neuron neuron = new Neuron(signal,countItem,1);
         neuron.algHebb( arrayA,arrayB);
 
 
